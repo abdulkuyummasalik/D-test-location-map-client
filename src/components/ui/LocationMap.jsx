@@ -70,6 +70,9 @@ const LocationMap = ({ locations, onMarkerClick, setMapRef }) => {
   const [userLocation, setUserLocation] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [buttonText, setButtonText] = useState('Cari Lokasi Saya');
+  const [isLayerControlOpen, setIsLayerControlOpen] = useState(false);
+  const [selectedBaseLayer, setSelectedBaseLayer] = useState('OpenStreetMap');
+  const [opacity, setOpacity] = useState(100);
 
   useEffect(() => {
     if (mapRef.current) {
@@ -114,6 +117,20 @@ const LocationMap = ({ locations, onMarkerClick, setMapRef }) => {
     }
   };
 
+  const toggleLayerControlModal = () => {
+    setIsLayerControlOpen(!isLayerControlOpen);
+  };
+
+  const changeBaseLayer = (layerName) => {
+    setSelectedBaseLayer(layerName);
+    if (mapRef.current) {
+    }
+  };
+
+  const handleOpacityChange = (value) => {
+    setOpacity(value);
+  };
+
   return (
     <div className="h-[600px] w-full relative">
       <MapContainer
@@ -124,26 +141,28 @@ const LocationMap = ({ locations, onMarkerClick, setMapRef }) => {
         ref={handleMapRef}
       >
         <MapEventHandler setMapPosition={setMapPosition} />
-        <LayersControl position="topleft">
-          <BaseLayer checked name="OpenStreetMap">
-            <TileLayer
-              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-              attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-            />
-          </BaseLayer>
-          <BaseLayer name="Google Satelite">
-            <TileLayer
-              url="https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}"
-              attribution='&copy; <a href="https://www.google.com/maps">Google Maps</a>'
-            />
-          </BaseLayer>
-          <BaseLayer name="Google Terrain">
-            <TileLayer
-              url="https://mt1.google.com/vt/lyrs=p&x={x}&y={y}&z={z}"
-              attribution='&copy; <a href="https://www.google.com/maps">Google Maps</a>'
-            />
-          </BaseLayer>
-        </LayersControl>
+        
+        {selectedBaseLayer === 'OpenStreetMap' && (
+          <TileLayer
+            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+            opacity={opacity / 100}
+          />
+        )}
+        {selectedBaseLayer === 'Google Satelite' && (
+          <TileLayer
+            url="https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}"
+            attribution='&copy; <a href="https://www.google.com/maps">Google Maps</a>'
+            opacity={opacity / 100}
+          />
+        )}
+        {selectedBaseLayer === 'Google Terrain' && (
+          <TileLayer
+            url="https://mt1.google.com/vt/lyrs=p&x={x}&y={y}&z={z}"
+            attribution='&copy; <a href="https://www.google.com/maps">Google Maps</a>'
+            opacity={opacity / 100}
+          />
+        )}
 
         {locations.map((location) => (
           <Marker
@@ -175,6 +194,16 @@ const LocationMap = ({ locations, onMarkerClick, setMapRef }) => {
           </Marker>
         )}
       </MapContainer>
+
+      {/* Tambahkan tombol untuk membuka modal layer control */}
+      <button
+        onClick={toggleLayerControlModal}
+        className="absolute top-24 left-4 bg-white p-2 rounded-md shadow-md z-999 hover:bg-gray-100"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
+        </svg>
+      </button>
 
       <button
         onClick={goToAddLocation}
@@ -210,6 +239,80 @@ const LocationMap = ({ locations, onMarkerClick, setMapRef }) => {
         src={markerKompas}
         alt="kompas img"
       />
+
+      {/* Modal untuk Layer Control */}
+      {isLayerControlOpen && (
+        <div className="absolute top-16 left-4 bg-white p-4 rounded-md shadow-lg z-1000 w-[280px] sm:w-[320px]">
+          <div className="flex justify-between items-center mb-4">
+            <h3 className="text-lg font-bold">Peta Dasar</h3>
+            <button 
+              onClick={toggleLayerControlModal}
+              className="text-gray-500 hover:text-gray-700"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+          
+          <div className="grid grid-cols-1 gap-2 mb-6">
+            <button 
+              className={`py-2 px-4 text-left rounded-md ${selectedBaseLayer === 'OpenStreetMap' ? 'bg-blue-500 text-white' : 'bg-gray-100 hover:bg-gray-200'}`}
+              onClick={() => changeBaseLayer('OpenStreetMap')}
+            >
+              OpenStreetMap
+            </button>
+            <button 
+              className={`py-2 px-4 text-left rounded-md ${selectedBaseLayer === 'Google Satelite' ? 'bg-blue-500 text-white' : 'bg-gray-100 hover:bg-gray-200'}`}
+              onClick={() => changeBaseLayer('Google Satelite')}
+            >
+              Google Satelite
+            </button>
+            <button 
+              className={`py-2 px-4 text-left rounded-md ${selectedBaseLayer === 'Google Terrain' ? 'bg-blue-500 text-white' : 'bg-gray-100 hover:bg-gray-200'}`}
+              onClick={() => changeBaseLayer('Google Terrain')}
+            >
+              Google Terrain
+            </button>
+          </div>
+          
+          <div>
+            <h4 className="font-medium mb-3">Opacity</h4>
+            <div className="grid grid-cols-5 gap-1">
+              <button 
+                className={`px-1 py-1 text-xs sm:text-sm rounded-md ${opacity === 10 ? 'bg-blue-500 text-white' : 'bg-gray-100 hover:bg-gray-200'}`}
+                onClick={() => handleOpacityChange(10)}
+              >
+                10%
+              </button>
+              <button 
+                className={`px-1 py-1 text-xs sm:text-sm rounded-md ${opacity === 25 ? 'bg-blue-500 text-white' : 'bg-gray-100 hover:bg-gray-200'}`}
+                onClick={() => handleOpacityChange(25)}
+              >
+                25%
+              </button>
+              <button 
+                className={`px-1 py-1 text-xs sm:text-sm rounded-md ${opacity === 50 ? 'bg-blue-500 text-white' : 'bg-gray-100 hover:bg-gray-200'}`}
+                onClick={() => handleOpacityChange(50)}
+              >
+                50%
+              </button>
+              <button 
+                className={`px-1 py-1 text-xs sm:text-sm rounded-md ${opacity === 75 ? 'bg-blue-500 text-white' : 'bg-gray-100 hover:bg-gray-200'}`}
+                onClick={() => handleOpacityChange(75)}
+              >
+                75%
+              </button>
+              <button 
+                className={`px-1 py-1 text-xs sm:text-sm rounded-md ${opacity === 100 ? 'bg-blue-500 text-white' : 'bg-gray-100 hover:bg-gray-200'}`}
+                onClick={() => handleOpacityChange(100)}
+              >
+                100%
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
 
       {isModalOpen && (
         <div className="fixed inset-0 flex justify-center items-center z-1000">

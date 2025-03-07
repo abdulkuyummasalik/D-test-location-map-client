@@ -8,8 +8,10 @@ const AuthContext = createContext();
 
 // Data pengguna awal
 const initialUsers = [
-    { username: 'admin123', password: 'Password123' },
-    { username: 'admin', password: 'Password123' },
+    { 
+        username: `${import.meta.env.VITE_REACT_APP_DEMO_USER_NAME}`, 
+        password: `${import.meta.env.VITE_REACT_APP_DEMO_USER_PASSWORD}` 
+    },
 ];
 
 export const AuthProvider = ({ children }) => {

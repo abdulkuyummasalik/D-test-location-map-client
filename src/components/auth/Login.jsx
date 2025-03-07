@@ -22,13 +22,16 @@ const LoginSchema = Yup.object().shape({
 
 const Login = () => {
   const navigate = useNavigate();
+  const [isLoading, setIsLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const { login, isLoggedIn } = useAuth();
 
   // Fungsi untuk menangani submit form
   const handleSubmit = (values) => {
+    setIsLoading(true);
     const { username, password } = values;
     login(username, password); // Tidak perlu cek lagi, karena login sudah tangani semuanya
+    setIsLoading(false);
   };
 
   // Redirect jika sudah login
@@ -40,7 +43,7 @@ const Login = () => {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
       <div className="bg-white p-8 rounded-lg shadow-md w-96">
-        <h1 className="text-2xl font-bold mb-6 text-center">Masuk</h1>
+        <h1 className="text-2xl font-bold mb-6 text-center">PETA</h1>
         <Formik
           initialValues={{ username: '', password: '' }}
           validationSchema={LoginSchema}
@@ -95,8 +98,9 @@ const Login = () => {
               <button
                 type="submit"
                 className="w-full bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                disabled={isLoading}
               >
-                Masuk
+                {isLoading ? 'Loading..' : 'Masuk'}
               </button>
 
               {/* Link ke Halaman Register */}

@@ -56,7 +56,8 @@ const FilterSection = ({ onFilterChange }) => {
     const hideMonthFilter = [
         "/report/kpi/pa",
         "/report/kpi/mtbs",
-        "/report/kpi/mttr"
+        "/report/kpi/mttr",
+        "/report/part-recommendation"
     ];
 
     // Handler untuk perubahan site
