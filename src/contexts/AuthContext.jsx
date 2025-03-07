@@ -9,8 +9,8 @@ const AuthContext = createContext();
 // Data pengguna awal
 const initialUsers = [
     { 
-        username: `${import.meta.env.VITE_REACT_APP_DEMO_USER_NAME}` || "admin", 
-        password: `${import.meta.env.VITE_REACT_APP_DEMO_USER_PASSWORD}` || "password" 
+        username: `${import.meta.env.VITE_REACT_APP_DEMO_USER_NAME}`, 
+        password: `${import.meta.env.VITE_REACT_APP_DEMO_USER_PASSWORD}` 
     },
 ];
 
