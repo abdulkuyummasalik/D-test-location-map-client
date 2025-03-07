@@ -1,0 +1,1412 @@
+[
+    {
+      "id": 1,
+      "use_by": "Hadi Prasetyo",
+      "location_name": "Pabrik Tekstil Nusantara",
+      "latitude": -6.914744,
+      "longitude": 107.60981,
+      "site": "Tower Telkom Area",
+      "province": "JAWA BARAT",
+      "city": "KOTA BANDUNG",
+      "district": "BANDUNG WETAN",
+      "subdistrict": "CITARUM",
+      "address": "Jl. Citarum No. 109, Bandung Wetan, Kota Bandung",
+      "condition_data": [
+        {
+          "title": "Working",
+          "description": "",
+          "color": "#008000",
+          "value": 15
+        },
+        {
+          "title": "Idle",
+          "description": "",
+          "color": "#FFFF00",
+          "value": 4
+        },
+        {
+          "title": "Trouble",
+          "description": "",
+          "color": "#FF0000",
+          "value": 30
+        }
+      ],
+      "detail_specification": [
+        {
+          "title": "Progress Building",
+          "value": "75%"
+        },
+        {
+          "title": "Long Term Progress",
+          "value": "36 Jam"
+        },
+        {
+          "title": "Is Still Progress",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "use_by": "Siti Rahmawati",
+      "location_name": "Pabrik Kertas Mandiri",
+      "latitude": -6.709529,
+      "longitude": 107.026062,
+      "site": "Indah Area",
+      "province": "JAWA BARAT",
+      "city": "KABUPATEN PURWAKARTA",
+      "district": "PURWAKARTA",
+      "subdistrict": "NAGRI KALER",
+      "address": "Jl. Veteran No. 12, Nagri Kaler, Purwakarta",
+      "condition_data": [
+        {
+          "title": "Working",
+          "description": "",
+          "color": "#008000",
+          "value": 20
+        },
+        {
+          "title": "Idle",
+          "description": "",
+          "color": "#FFFF00",
+          "value": 6
+        },
+        {
+          "title": "Trouble",
+          "description": "",
+          "color": "#FF0000",
+          "value": 12
+        }
+      ],
+      "detail_specification": [
+        {
+          "title": "Progress Building",
+          "value": "85%"
+        },
+        {
+          "title": "Long Term Progress",
+          "value": "48 Jam"
+        },
+        {
+          "title": "Is Still Progress",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "use_by": "Budi Santoso",
+      "location_name": "Pabrik Baja Sejahtera",
+      "latitude": -6.97283,
+      "longitude": 107.6309,
+      "site": "Tower Telkom Area",
+      "province": "JAWA BARAT",
+      "city": "KOTA BANDUNG",
+      "district": "BANDUNG KIDUL",
+      "subdistrict": "BATUNUNGGAL",
+      "address": "Jl. Batununggal Indah IV No. 88, Batununggal, Bandung Kidul, Kota Bandung",
+      "condition_data": [
+        {
+          "title": "Working",
+          "description": "",
+          "color": "#008000",
+          "value": 25
+        },
+        {
+          "title": "Idle",
+          "description": "",
+          "color": "#FFFF00",
+          "value": 7
+        },
+        {
+          "title": "Trouble",
+          "description": "",
+          "color": "#FF0000",
+          "value": 10
+        }
+      ],
+      "detail_specification": [
+        {
+          "title": "Progress Building",
+          "value": "90%"
+        },
+        {
+          "title": "Long Term Progress",
+          "value": "72 Jam"
+        },
+        {
+          "title": "Is Still Progress",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "use_by": "Arief Budiman",
+      "location_name": "Pabrik Plastik Sukses",
+      "latitude": -6.570347,
+      "longitude": 106.567383,
+      "site": "Tugu Area",
+      "province": "JAWA BARAT",
+      "city": "KOTA BOGOR",
+      "district": "BOGOR BARAT",
+      "subdistrict": "SITU GEDE",
+      "address": "Jl. Situ Gede No. 23, Situ Gede, Bogor Barat, Kota Bogor",
+      "condition_data": [
+        {
+          "title": "Working",
+          "description": "",
+          "color": "#008000",
+          "value": 18
+        },
+        {
+          "title": "Idle",
+          "description": "",
+          "color": "#FFFF00",
+          "value": 3
+        },
+        {
+          "title": "Trouble",
+          "description": "",
+          "color": "#FF0000",
+          "value": 22
+        }
+      ],
+      "detail_specification": [
+        {
+          "title": "Progress Building",
+          "value": "60%"
+        },
+        {
+          "title": "Long Term Progress",
+          "value": "24 Jam"
+        },
+        {
+          "title": "Is Still Progress",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "use_by": "Rina Suryani",
+      "location_name": "Pabrik Gula Murni",
+      "latitude": -6.597456,
+      "longitude": 107.711002,
+      "site": "IKN Area",
+      "province": "JAWA BARAT",
+      "city": "KABUPATEN KARAWANG",
+      "district": "KARAWANG TIMUR",
+      "subdistrict": "KARAWANG WETAN",
+      "address": "Jl. Industri Karawang Timur No. 56, Karawang Wetan, Karawang Timur, Kabupaten Karawang, Jawa Barat 41371",
+      "condition_data": [
+        {
+          "title": "Working",
+          "description": "",
+          "color": "#008000",
+          "value": 22
+        },
+        {
+          "title": "Idle",
+          "description": "",
+          "color": "#FFFF00",
+          "value": 5
+        },
+        {
+          "title": "Trouble",
+          "description": "",
+          "color": "#FF0000",
+          "value": 8
+        }
+      ],
+      "detail_specification": [
+        {
+          "title": "Progress Building",
+          "value": "80%"
+        },
+        {
+          "title": "Long Term Progress",
+          "value": "48 Jam"
+        },
+        {
+          "title": "Is Still Progress",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "use_by": "Eka Sumantri",
+      "location_name": "Pabrik Elektronik Cemerlang",
+      "latitude": -6.371223,
+      "longitude": 106.226807,
+      "site": "Tugu Area",
+      "province": "JAWA BARAT",
+      "city": "KABUPATEN BOGOR",
+      "district": "LEUWILIANG",
+      "subdistrict": "LEUWILIANG",
+      "address": "Jl. Raya Leuwiliang No. 78, Leuwiliang, Kabupaten Bogor, Jawa Barat 16640",
+      "condition_data": [
+        {
+          "title": "Working",
+          "description": "",
+          "color": "#008000",
+          "value": 13
+        },
+        {
+          "title": "Idle",
+          "description": "",
+          "color": "#FFFF00",
+          "value": 9
+        },
+        {
+          "title": "Trouble",
+          "description": "",
+          "color": "#FF0000",
+          "value": 25
+        }
+      ],
+      "detail_specification": [
+        {
+          "title": "Progress Building",
+          "value": "90%"
+        },
+        {
+          "title": "Long Term Progress",
+          "value": "60 Jam"
+        },
+        {
+          "title": "Is Still Progress",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "use_by": "Dina Wijayanti",
+      "location_name": "Pabrik Kaca Mulia",
+      "latitude": -6.675345,
+      "longitude": 107.520456,
+      "site": "Astro Area",
+      "province": "JAWA BARAT",
+      "city": "KOTA CIMAHI",
+      "district": "CIMAHI SELATAN",
+      "subdistrict": "CIBEBER",
+      "address": "Jl. Cibeber Raya No. 167, Cimahi Selatan, Kota Cimahi",
+      "condition_data": [
+        {
+          "title": "Working",
+          "description": "",
+          "color": "#008000",
+          "value": 17
+        },
+        {
+          "title": "Idle",
+          "description": "",
+          "color": "#FFFF00",
+          "value": 4
+        },
+        {
+          "title": "Trouble",
+          "description": "",
+          "color": "#FF0000",
+          "value": 15
+        }
+      ],
+      "detail_specification": [
+        {
+          "title": "Progress Building",
+          "value": "77%"
+        },
+        {
+          "title": "Long Term Progress",
+          "value": "36 Jam"
+        },
+        {
+          "title": "Is Still Progress",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "use_by": "Yudi Hartono",
+      "location_name": "Pabrik Keramik Sentosa",
+      "latitude": -6.794245,
+      "longitude": 107.671908,
+      "site": "Martabe Area",
+      "province": "JAWA BARAT",
+      "city": "KABUPATEN BANDUNG",
+      "district": "CILEUNYI",
+      "subdistrict": "CILEUNYI KULON",
+      "address": "Jl. Cileunyi Kulon No. 321, Cileunyi, Kabupaten Bandung",
+      "condition_data": [
+        {
+          "title": "Working",
+          "description": "",
+          "color": "#008000",
+          "value": 30
+        },
+        {
+          "title": "Idle",
+          "description": "",
+          "color": "#FFFF00",
+          "value": 2
+        },
+        {
+          "title": "Trouble",
+          "description": "",
+          "color": "#FF0000",
+          "value": 10
+        }
+      ],
+      "detail_specification": [
+        {
+          "title": "Progress Building",
+          "value": "95%"
+        },
+        {
+          "title": "Long Term Progress",
+          "value": "72 Jam"
+        },
+        {
+          "title": "Is Still Progress",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "use_by": "Sari Indah",
+      "location_name": "Pabrik Sepatu Makmur",
+      "latitude": -6.883076,
+      "longitude": 107.672317,
+      "site": "Martabe Area",
+      "province": "JAWA BARAT",
+      "city": "KOTA BANDUNG",
+      "district": "CINAMBO",
+      "subdistrict": "CISARANTEN WETAN",
+      "address": "Jl. Cisaranten Wetan No. 432, Cinambo, Kota Bandung",
+      "condition_data": [
+        {
+          "title": "Working",
+          "description": "",
+          "color": "#008000",
+          "value": 12
+        },
+        {
+          "title": "Idle",
+          "description": "",
+          "color": "#FFFF00",
+          "value": 8
+        },
+        {
+          "title": "Trouble",
+          "description": "",
+          "color": "#FF0000",
+          "value": 22
+        }
+      ],
+      "detail_specification": [
+        {
+          "title": "Progress Building",
+          "value": "60%"
+        },
+        {
+          "title": "Long Term Progress",
+          "value": "36 Jam"
+        },
+        {
+          "title": "Is Still Progress",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "use_by": "Faisal Ramadhan",
+      "location_name": "Pabrik Makanan Sehat",
+      "latitude": -6.9203,
+      "longitude": 107.6148,
+      "site": "Tower Telkom Area",
+      "province": "JAWA BARAT",
+      "city": "KOTA BANDUNG",
+      "district": "BANDUNG WETAN",
+      "subdistrict": "TAMANSARI",
+      "address": "Jl. Tamansari No. 543, Tamansari, Kota Bandung",
+      "condition_data": [
+        {
+          "title": "Working",
+          "description": "",
+          "color": "#008000",
+          "value": 28
+        },
+        {
+          "title": "Idle",
+          "description": "",
+          "color": "#FFFF00",
+          "value": 6
+        },
+        {
+          "title": "Trouble",
+          "description": "",
+          "color": "#FF0000",
+          "value": 5
+        }
+      ],
+      "detail_specification": [
+        {
+          "title": "Progress Building",
+          "value": "82%"
+        },
+        {
+          "title": "Long Term Progress",
+          "value": "48 Jam"
+        },
+        {
+          "title": "Is Still Progress",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "use_by": "Rudi Setiawan",
+      "location_name": "Pabrik Kimia Pratama",
+      "latitude": -6.891225,
+      "longitude": 107.633467,
+      "site": "Tower Telkom Area",
+      "province": "JAWA BARAT",
+      "city": "KOTA BANDUNG",
+      "district": "BANDUNG KIDUL",
+      "subdistrict": "KUJANGSARI",
+      "address": "Jl. Kujangsari No. 654, Kujangsari, Kota Bandung",
+      "condition_data": [
+        {
+          "title": "Working",
+          "description": "",
+          "color": "#008000",
+          "value": 19
+        },
+        {
+          "title": "Idle",
+          "description": "",
+          "color": "#FFFF00",
+          "value": 5
+        },
+        {
+          "title": "Trouble",
+          "description": "",
+          "color": "#FF0000",
+          "value": 15
+        }
+      ],
+      "detail_specification": [
+        {
+          "title": "Progress Building",
+          "value": "80%"
+        },
+        {
+          "title": "Long Term Progress",
+          "value": "60 Jam"
+        },
+        {
+          "title": "Is Still Progress",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "use_by": "Maya Puspitasari",
+      "location_name": "Pabrik Ban Terang",
+      "latitude": -6.750126,
+      "longitude": 107.67084,
+      "site": "Martabe Area",
+      "province": "JAWA BARAT",
+      "city": "KOTA BANDUNG",
+      "district": "UJUNG BERUNG",
+      "subdistrict": "PASIR ENDAH",
+      "address": "Jl. Pasir Endah No. 765, Pasir Endah, Ujung Berung, Kota Bandung",
+      "condition_data": [
+        {
+          "title": "Working",
+          "description": "",
+          "color": "#008000",
+          "value": 14
+        },
+        {
+          "title": "Idle",
+          "description": "",
+          "color": "#FFFF00",
+          "value": 7
+        },
+        {
+          "title": "Trouble",
+          "description": "",
+          "color": "#FF0000",
+          "value": 18
+        }
+      ],
+      "detail_specification": [
+        {
+          "title": "Progress Building",
+          "value": "70%"
+        },
+        {
+          "title": "Long Term Progress",
+          "value": "24 Jam"
+        },
+        {
+          "title": "Is Still Progress",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "use_by": "Lina Kartika",
+      "location_name": "Pabrik Kulkas Modern",
+      "latitude": -6.756348,
+      "longitude": 107.697012,
+      "site": "Martabe Area",
+      "province": "JAWA BARAT",
+      "city": "KABUPATEN BANDUNG",
+      "district": "CILEUNYI",
+      "subdistrict": "CILEUNYI WETAN",
+      "address": "Jl. Cileunyi Wetan No. 876, Cileunyi, Kabupaten Bandung",
+      "condition_data": [
+        {
+          "title": "Working",
+          "description": "",
+          "color": "#008000",
+          "value": 21
+        },
+        {
+          "title": "Idle",
+          "description": "",
+          "color": "#FFFF00",
+          "value": 6
+        },
+        {
+          "title": "Trouble",
+          "description": "",
+          "color": "#FF0000",
+          "value": 12
+        }
+      ],
+      "detail_specification": [
+        {
+          "title": "Progress Building",
+          "value": "80%"
+        },
+        {
+          "title": "Long Term Progress",
+          "value": "48 Jam"
+        },
+        {
+          "title": "Is Still Progress",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "use_by": "Fadli Hidayat",
+      "location_name": "Pabrik Minyak Goreng Sehat",
+      "latitude": -6.81267,
+      "longitude": 107.61254,
+      "site": "Puncak Area",
+      "province": "JAWA BARAT",
+      "city": "KOTA BANDUNG",
+      "district": "BANDUNG KULON",
+      "subdistrict": "CIJERAH",
+      "address": "Jl. Cijeruh No. 987, Cijeruh, Kota Bandung",
+      "condition_data": [
+        {
+          "title": "Working",
+          "description": "",
+          "color": "#008000",
+          "value": 27
+        },
+        {
+          "title": "Idle",
+          "description": "",
+          "color": "#FFFF00",
+          "value": 8
+        },
+        {
+          "title": "Trouble",
+          "description": "",
+          "color": "#FF0000",
+          "value": 10
+        }
+      ],
+      "detail_specification": [
+        {
+          "title": "Progress Building",
+          "value": "85%"
+        },
+        {
+          "title": "Long Term Progress",
+          "value": "72 Jam"
+        },
+        {
+          "title": "Is Still Progress",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "use_by": "Dian Yuliana",
+      "location_name": "Pabrik Sosis Enak",
+      "latitude": -6.822493,
+      "longitude": 107.64022,
+      "site": "Tower Telkom Area",
+      "province": "JAWA BARAT",
+      "city": "KOTA BANDUNG",
+      "district": "BANDUNG WETAN",
+      "subdistrict": "CITARUM",
+      "address": "Jl. Citarum No. 109, Bandung Wetan, Kota Bandung",
+      "condition_data": [
+        {
+          "title": "Working",
+          "description": "",
+          "color": "#008000",
+          "value": 23
+        },
+        {
+          "title": "Idle",
+          "description": "",
+          "color": "#FFFF00",
+          "value": 5
+        },
+        {
+          "title": "Trouble",
+          "description": "",
+          "color": "#FF0000",
+          "value": 12
+        }
+      ],
+      "detail_specification": [
+        {
+          "title": "Progress Building",
+          "value": "78%"
+        },
+        {
+          "title": "Long Term Progress",
+          "value": "60 Jam"
+        },
+        {
+          "title": "Is Still Progress",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "use_by": "Taufik Rahman",
+      "location_name": "Pabrik Tinta Warna",
+      "latitude": -6.955731,
+      "longitude": 107.677463,
+      "site": "Menara Astra Area",
+      "province": "JAWA BARAT",
+      "city": "KOTA BANDUNG",
+      "district": "GEDEBAGE",
+      "subdistrict": "RANCABOLANG",
+      "address": "Jl. Rancabolang No. 123, Rancabolang, Kota Bandung",
+      "condition_data": [
+        {
+          "title": "Working",
+          "description": "",
+          "color": "#008000",
+          "value": 18
+        },
+        {
+          "title": "Idle",
+          "description": "",
+          "color": "#FFFF00",
+          "value": 6
+        },
+        {
+          "title": "Trouble",
+          "description": "",
+          "color": "#FF0000",
+          "value": 15
+        }
+      ],
+      "detail_specification": [
+        {
+          "title": "Progress Building",
+          "value": "80%"
+        },
+        {
+          "title": "Long Term Progress",
+          "value": "48 Jam"
+        },
+        {
+          "title": "Is Still Progress",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "use_by": "Rina Kurniawati",
+      "location_name": "Pabrik Sepatu Indah",
+      "latitude": -6.70582,
+      "longitude": 107.652201,
+      "site": "Martabe Area",
+      "province": "JAWA BARAT",
+      "city": "KABUPATEN BANDUNG",
+      "district": "CILEUNYI",
+      "subdistrict": "CILEUNYI WETAN",
+      "address": "Jl. Cileunyi Wetan No. 876, Cileunyi, Kabupaten Bandung",
+      "condition_data": [
+        {
+          "title": "Working",
+          "description": "",
+          "color": "#008000",
+          "value": 20
+        },
+        {
+          "title": "Idle",
+          "description": "",
+          "color": "#FFFF00",
+          "value": 4
+        },
+        {
+          "title": "Trouble",
+          "description": "",
+          "color": "#FF0000",
+          "value": 10
+        }
+      ],
+      "detail_specification": [
+        {
+          "title": "Progress Building",
+          "value": "75%"
+        },
+        {
+          "title": "Long Term Progress",
+          "value": "72 Jam"
+        },
+        {
+          "title": "Is Still Progress",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "use_by": "Budi Santosa",
+      "location_name": "Pabrik Cat Terang",
+      "latitude": -6.80298,
+      "longitude": 107.682593,
+      "site": "Martabe Area",
+      "province": "JAWA BARAT",
+      "city": "KABUPATEN BANDUNG",
+      "district": "CILEUNYI",
+      "subdistrict": "CILEUNYI KULON",
+      "address": "Jl. Cileunyi Kulon No. 321, Cileunyi, Kabupaten Bandung",
+      "condition_data": [
+        {
+          "title": "Working",
+          "description": "",
+          "color": "#008000",
+          "value": 28
+        },
+        {
+          "title": "Idle",
+          "description": "",
+          "color": "#FFFF00",
+          "value": 6
+        },
+        {
+          "title": "Trouble",
+          "description": "",
+          "color": "#FF0000",
+          "value": 9
+        }
+      ],
+      "detail_specification": [
+        {
+          "title": "Progress Building",
+          "value": "85%"
+        },
+        {
+          "title": "Long Term Progress",
+          "value": "60 Jam"
+        },
+        {
+          "title": "Is Still Progress",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "use_by": "Nina Rahayu",
+      "location_name": "Pabrik Papan Lapis",
+      "latitude": -6.8126,
+      "longitude": 107.631927,
+      "site": "Puncak Area",
+      "province": "JAWA BARAT",
+      "city": "KOTA BANDUNG",
+      "district": "BANDUNG KULON",
+      "subdistrict": "CIJERAH",
+      "address": "Jl. Cijeruh No. 987, Cijeruh, Kota Bandung",
+      "condition_data": [
+        {
+          "title": "Working",
+          "description": "",
+          "color": "#008000",
+          "value": 16
+        },
+        {
+          "title": "Idle",
+          "description": "",
+          "color": "#FFFF00",
+          "value": 3
+        },
+        {
+          "title": "Trouble",
+          "description": "",
+          "color": "#FF0000",
+          "value": 20
+        }
+      ],
+      "detail_specification": [
+        {
+          "title": "Progress Building",
+          "value": "82%"
+        },
+        {
+          "title": "Long Term Progress",
+          "value": "72 Jam"
+        },
+        {
+          "title": "Is Still Progress",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "use_by": "Imanuel Dwi",
+      "location_name": "Pabrik Kayu Jaya",
+      "latitude": -6.772371,
+      "longitude": 107.693271,
+      "site": "Martabe Area",
+      "province": "JAWA BARAT",
+      "city": "KABUPATEN BANDUNG",
+      "district": "CILEUNYI",
+      "subdistrict": "CILEUNYI WETAN",
+      "address": "Jl. Cileunyi Wetan No. 876, Cileunyi, Kabupaten Bandung",
+      "condition_data": [
+        {
+          "title": "Working",
+          "description": "",
+          "color": "#008000",
+          "value": 24
+        },
+        {
+          "title": "Idle",
+          "description": "",
+          "color": "#FFFF00",
+          "value": 8
+        },
+        {
+          "title": "Trouble",
+          "description": "",
+          "color": "#FF0000",
+          "value": 10
+        }
+      ],
+      "detail_specification": [
+        {
+          "title": "Progress Building",
+          "value": "70%"
+        },
+        {
+          "title": "Long Term Progress",
+          "value": "36 Jam"
+        },
+        {
+          "title": "Is Still Progress",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "use_by": "Tomi Prasetyo",
+      "location_name": "Pabrik Baja Makmur",
+      "latitude": -6.833214,
+      "longitude": 107.612342,
+      "site": "Puncak Area",
+      "province": "JAWA BARAT",
+      "city": "KOTA BANDUNG",
+      "district": "BANDUNG KULON",
+      "subdistrict": "CIGONDEWAH KIDUL",
+      "address": "Jl. Cijeruh No. 987, Cijeruh, Kota Bandung",
+      "condition_data": [
+        {
+          "title": "Working",
+          "description": "",
+          "color": "#008000",
+          "value": 22
+        },
+        {
+          "title": "Idle",
+          "description": "",
+          "color": "#FFFF00",
+          "value": 5
+        },
+        {
+          "title": "Trouble",
+          "description": "",
+          "color": "#FF0000",
+          "value": 13
+        }
+      ],
+      "detail_specification": [
+        {
+          "title": "Progress Building",
+          "value": "90%"
+        },
+        {
+          "title": "Long Term Progress",
+          "value": "48 Jam"
+        },
+        {
+          "title": "Is Still Progress",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "use_by": "Rika Wulandari",
+      "location_name": "Pabrik Pangan Sejahtera",
+      "latitude": -6.789762,
+      "longitude": 107.670834,
+      "site": "Martabe Area",
+      "province": "JAWA BARAT",
+      "city": "KABUPATEN BANDUNG",
+      "district": "CILEUNYI",
+      "subdistrict": "CILEUNYI KULON",
+      "address": "Jl. Cileunyi Kulon No. 321, Cileunyi, Kabupaten Bandung",
+      "condition_data": [
+        {
+          "title": "Working",
+          "description": "",
+          "color": "#008000",
+          "value": 18
+        },
+        {
+          "title": "Idle",
+          "description": "",
+          "color": "#FFFF00",
+          "value": 7
+        },
+        {
+          "title": "Trouble",
+          "description": "",
+          "color": "#FF0000",
+          "value": 16
+        }
+      ],
+      "detail_specification": [
+        {
+          "title": "Progress Building",
+          "value": "80%"
+        },
+        {
+          "title": "Long Term Progress",
+          "value": "60 Jam"
+        },
+        {
+          "title": "Is Still Progress",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "use_by": "Andi Yusof",
+      "location_name": "Pabrik Elektronik Jaya",
+      "latitude": -6.703512,
+      "longitude": 107.655633,
+      "site": "Martabe Area",
+      "province": "JAWA BARAT",
+      "city": "KABUPATEN BANDUNG",
+      "district": "CILEUNYI",
+      "subdistrict": "CILEUNYI WETAN",
+      "address": "Jl. Cileunyi Wetan No. 876, Cileunyi, Kabupaten Bandung",
+      "condition_data": [
+        {
+          "title": "Working",
+          "description": "",
+          "color": "#008000",
+          "value": 26
+        },
+        {
+          "title": "Idle",
+          "description": "",
+          "color": "#FFFF00",
+          "value": 6
+        },
+        {
+          "title": "Trouble",
+          "description": "",
+          "color": "#FF0000",
+          "value": 12
+        }
+      ],
+      "detail_specification": [
+        {
+          "title": "Progress Building",
+          "value": "85%"
+        },
+        {
+          "title": "Long Term Progress",
+          "value": "72 Jam"
+        },
+        {
+          "title": "Is Still Progress",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "use_by": "Denny Apriyanto",
+      "location_name": "Pabrik Mesin Roda Dua",
+      "latitude": -6.732111,
+      "longitude": 107.633543,
+      "site": "IKS Area",
+      "province": "JAWA BARAT",
+      "city": "KOTA BANDUNG",
+      "district": "UJUNG BERUNG",
+      "subdistrict": "PASANGGRAHAN",
+      "address": "Jl. Pasir Endah No. 765, Pasir Endah, Ujung Berung, Kota Bandung",
+      "condition_data": [
+        {
+          "title": "Working",
+          "description": "",
+          "color": "#008000",
+          "value": 24
+        },
+        {
+          "title": "Idle",
+          "description": "",
+          "color": "#FFFF00",
+          "value": 4
+        },
+        {
+          "title": "Trouble",
+          "description": "",
+          "color": "#FF0000",
+          "value": 15
+        }
+      ],
+      "detail_specification": [
+        {
+          "title": "Progress Building",
+          "value": "78%"
+        },
+        {
+          "title": "Long Term Progress",
+          "value": "60 Jam"
+        },
+        {
+          "title": "Is Still Progress",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "use_by": "Eka Sari",
+      "location_name": "Pabrik Semen Sejahtera",
+      "latitude": -6.894111,
+      "longitude": 107.632215,
+      "site": "Menara Astra Area",
+      "province": "JAWA BARAT",
+      "city": "KOTA BANDUNG",
+      "district": "BANDUNG KIDUL",
+      "subdistrict": "BATUNUNGGAL",
+      "address": "Jl. Batununggal Indah IV No. 88, Batununggal, Bandung Kidul, Kota Bandung",
+      "condition_data": [
+        {
+          "title": "Working",
+          "description": "",
+          "color": "#008000",
+          "value": 19
+        },
+        {
+          "title": "Idle",
+          "description": "",
+          "color": "#FFFF00",
+          "value": 7
+        },
+        {
+          "title": "Trouble",
+          "description": "",
+          "color": "#FF0000",
+          "value": 13
+        }
+      ],
+      "detail_specification": [
+        {
+          "title": "Progress Building",
+          "value": "83%"
+        },
+        {
+          "title": "Long Term Progress",
+          "value": "72 Jam"
+        },
+        {
+          "title": "Is Still Progress",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "use_by": "Zaki Maulana",
+      "location_name": "Pabrik Otomotif Canggih",
+      "latitude": -6.784028,
+      "longitude": 107.652113,
+      "site": "Martabe Area",
+      "province": "JAWA BARAT",
+      "city": "KOTA BANDUNG",
+      "district": "CIBIRU",
+      "subdistrict": "CIPADUNG",
+      "address": "Jl. Cijeruh No. 987, Cijeruh, Kota Bandung",
+      "condition_data": [
+        {
+          "title": "Working",
+          "description": "",
+          "color": "#008000",
+          "value": 20
+        },
+        {
+          "title": "Idle",
+          "description": "",
+          "color": "#FFFF00",
+          "value": 5
+        },
+        {
+          "title": "Trouble",
+          "description": "",
+          "color": "#FF0000",
+          "value": 14
+        }
+      ],
+      "detail_specification": [
+        {
+          "title": "Progress Building",
+          "value": "80%"
+        },
+        {
+          "title": "Long Term Progress",
+          "value": "48 Jam"
+        },
+        {
+          "title": "Is Still Progress",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "use_by": "Tara Widya",
+      "location_name": "Pabrik Gula Manis",
+      "latitude": -6.728973,
+      "longitude": 107.625404,
+      "site": "IKS Area",
+      "province": "JAWA BARAT",
+      "city": "KOTA BANDUNG",
+      "district": "UJUNG BERUNG",
+      "subdistrict": "PASANGGRAHAN",
+      "address": "Jl. Pasir Endah No. 765, Pasir Endah, Ujung Berung, Kota Bandung",
+      "condition_data": [
+        {
+          "title": "Working",
+          "description": "",
+          "color": "#008000",
+          "value": 21
+        },
+        {
+          "title": "Idle",
+          "description": "",
+          "color": "#FFFF00",
+          "value": 6
+        },
+        {
+          "title": "Trouble",
+          "description": "",
+          "color": "#FF0000",
+          "value": 11
+        }
+      ],
+      "detail_specification": [
+        {
+          "title": "Progress Building",
+          "value": "82%"
+        },
+        {
+          "title": "Long Term Progress",
+          "value": "36 Jam"
+        },
+        {
+          "title": "Is Still Progress",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "use_by": "Fikri Zainal",
+      "location_name": "Pabrik Pemotongan Logam",
+      "latitude": -6.833312,
+      "longitude": 107.643212,
+      "site": "Tower Telkom Area",
+      "province": "JAWA BARAT",
+      "city": "CIBIRU",
+      "district": "PALASARI",
+      "subdistrict": "CILEUNYI",
+      "address": "Jl. Cijeruh No. 987, Cijeruh, Kota Bandung",
+      "condition_data": [
+        {
+          "title": "Working",
+          "description": "",
+          "color": "#008000",
+          "value": 28
+        },
+        {
+          "title": "Idle",
+          "description": "",
+          "color": "#FFFF00",
+          "value": 5
+        },
+        {
+          "title": "Trouble",
+          "description": "",
+          "color": "#FF0000",
+          "value": 8
+        }
+      ],
+      "detail_specification": [
+        {
+          "title": "Progress Building",
+          "value": "86%"
+        },
+        {
+          "title": "Long Term Progress",
+          "value": "72 Jam"
+        },
+        {
+          "title": "Is Still Progress",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "use_by": "Dewi Pramudya",
+      "location_name": "Pabrik Pipa Plastik",
+      "latitude": -6.703821,
+      "longitude": 107.68582,
+      "site": "Martabe Area",
+      "province": "JAWA BARAT",
+      "city": "KABUPATEN BANDUNG",
+      "district": "CILEUNYI",
+      "subdistrict": "CILEUNYI KULON",
+      "address": "Jl. Cileunyi Kulon No. 321, Cileunyi, Kabupaten Bandung",
+      "condition_data": [
+        {
+          "title": "Working",
+          "description": "",
+          "color": "#008000",
+          "value": 19
+        },
+        {
+          "title": "Idle",
+          "description": "",
+          "color": "#FFFF00",
+          "value": 4
+        },
+        {
+          "title": "Trouble",
+          "description": "",
+          "color": "#FF0000",
+          "value": 14
+        }
+      ],
+      "detail_specification": [
+        {
+          "title": "Progress Building",
+          "value": "88%"
+        },
+        {
+          "title": "Long Term Progress",
+          "value": "60 Jam"
+        },
+        {
+          "title": "Is Still Progress",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "use_by": "Hendra Wijaya",
+      "location_name": "Gudang Pembuatan Baju",
+      "latitude": -7.257472,
+      "longitude": 112.752088,
+      "site": "WONOK Area",
+      "province": "JAWA TIMUR",
+      "city": "KOTA SURABAYA",
+      "district": "WONOKROMO",
+      "subdistrict": "WONOKROMO",
+      "address": "Jl. Raya Wonokromo No. 123, Wonokromo, Kota Surabaya",
+      "condition_data": [
+        {
+          "title": "Working",
+          "description": "",
+          "color": "#008000",
+          "value": 25
+        },
+        {
+          "title": "Idle",
+          "description": "",
+          "color": "#FFFF00",
+          "value": 6
+        },
+        {
+          "title": "Trouble",
+          "description": "",
+          "color": "#FF0000",
+          "value": 13
+        }
+      ],
+      "detail_specification": [
+        {
+          "title": "Progress Building",
+          "value": "80%"
+        },
+        {
+          "title": "Long Term Progress",
+          "value": "48 Jam"
+        },
+        {
+          "title": "Is Still Progress",
+          "value": "false"
+        }
+      ]
+    }
+  ]

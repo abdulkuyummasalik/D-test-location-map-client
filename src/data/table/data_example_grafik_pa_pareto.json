@@ -1,0 +1,19 @@
+{
+  "physicalAvailability": {
+    "data": [
+      { "name": "DR9409", "category": 92.9, "value": 90.0 },
+      { "name": "DR9410", "category": 88.2, "value": 90.0 },
+      { "name": "DR9411", "category": 76.7, "value": 90.0 },
+      { "name": "DR9412", "category": 92.2, "value": 90.0 }
+    ]
+  },
+  "paretoDown": {
+    "data": [
+      { "name": "Hose & Fitting", "category": 145, "value": 4.2 },
+      { "name": "Full System", "category": 98, "value": 2.5 },
+      { "name": "Undercarriage", "category": 76, "value": 2.8 },
+      { "name": "Electric System", "category": 58, "value": 1.1 },
+      { "name": "Engine", "category": 42, "value": 4.1 }
+    ]
+  }
+} 

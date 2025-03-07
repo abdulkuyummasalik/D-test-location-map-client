@@ -1,0 +1,29 @@
+{
+    "headers": [
+        "Common Report Service Monthly per Drill",
+        "No Lambung",
+        "Model Drill",
+        "XXX type PM Service & Backlog",
+        "Duration Service",
+        "HM Service",
+        "HM Update",
+        "Hour to go",
+        "Remark",
+        "Site",
+        "Customer Name"
+    ],
+    "data": [
+        {
+            "no_lambung": "",
+            "model_drill": "",
+            "pm_service": "",
+            "duration": "",
+            "hm_service": "",
+            "hm_update": "",
+            "hour_to_go": "",
+            "remark": "",
+            "site": "",
+            "customer": ""
+        }
+    ]
+}

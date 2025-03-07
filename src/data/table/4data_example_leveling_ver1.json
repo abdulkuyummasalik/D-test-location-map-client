@@ -1,0 +1,74 @@
+[
+  {
+    "title": "",
+    "model": "",
+    "description": "SAFETY IS NUMBER",
+    "value": "",
+    "duration": null,
+    "background_color": "orange",
+    "text_color": "black"
+  },
+  {
+    "title": "",
+    "model": "",
+    "duration": 0,
+    "description": "PLAN WEEKEND 11 Jan",
+    "value": "",
+    "background_color": "white",
+    "text_color": "black"
+  },
+  {
+    "title": "INPROGRESS",
+    "model": "",
+    "description": "",
+    "background_color": "blue",
+    "value": "",
+    "duration": null,
+    "text_color": "black"
+  },
+  {
+    "title": "OUT STANDING",
+    "model": "",
+    "description": "",
+    "value": "",
+    "duration": null,
+    "background_color": "red",
+    "text_color": "black"
+  },
+  {
+    "title": "SENIN 25 Desember 2025",
+    "model": "",
+    "description": "",
+    "value": "",
+    "duration": null,
+    "background_color": "yellow",
+    "text_color": "black"
+  },
+  {
+    "title": "NO001",
+    "model": "GENSET",
+    "description": "200 WATT",
+    "value": "",
+    "duration": 8,
+    "background_color": "white",
+    "text_color": "black"
+  },
+  {
+    "title": "NO002",
+    "model": "PC",
+    "description": "380 WATT",
+    "value": "",
+    "duration": 9,
+    "background_color": "white",
+    "text_color": "black"
+  },
+  {
+    "title": "NO003",
+    "model": "AC",
+    "description": "80 WATT",
+    "value": "",
+    "duration": 12,
+    "background_color": "white",
+    "text_color": "black"
+  }
+]
