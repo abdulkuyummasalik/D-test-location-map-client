@@ -21,17 +21,12 @@ const FilterSection = ({ onFilterChange }) => {
     const [selectedYear, setSelectedYear] = useState("all");
     const [selectedMonth, setSelectedMonth] = useState("all");
 
-    // Filter customer berdasarkan site yang dipilih
     const customerOptions = LocationJSON
         .filter(loc => selectedSite === "all" || loc.site === selectedSite)
         .map(loc => ({
             value: loc.id,
             label: loc.location_name,
-            site: loc.site,
-            // coordinates: {
-            //     lat: loc.latitude,
-            //     lng: loc.longitude
-            // }
+            site: loc.site
         }));
 
     const yearOptions = [
@@ -52,7 +47,6 @@ const FilterSection = ({ onFilterChange }) => {
         }))
     ];
 
-    // Halaman yang tidak menampilkan filter bulan
     const hideMonthFilter = [
         "/report/kpi/pa",
         "/report/kpi/mtbs",
@@ -60,13 +54,11 @@ const FilterSection = ({ onFilterChange }) => {
         "/report/part-recommendation"
     ];
 
-    // Handler untuk perubahan site
     const handleSiteChange = (selected) => {
         const newSite = selected ? selected.value : "all";
         setSelectedSite(newSite);
         setSelectedCustomer(null);
 
-        // Update filter
         onFilterChange({
             site: newSite,
             customer: null,
@@ -75,7 +67,6 @@ const FilterSection = ({ onFilterChange }) => {
         });
     };
 
-    // Handler untuk perubahan customer
     const handleCustomerChange = (selected) => {
         setSelectedCustomer(selected);
         onFilterChange({
@@ -86,7 +77,6 @@ const FilterSection = ({ onFilterChange }) => {
         });
     };
 
-    // Handler untuk perubahan tahun
     const handleYearChange = (selected) => {
         const newYear = selected ? selected.value : "all";
         setSelectedYear(newYear);
@@ -98,7 +88,6 @@ const FilterSection = ({ onFilterChange }) => {
         });
     };
 
-    // Handler untuk perubahan bulan
     const handleMonthChange = (selected) => {
         const newMonth = selected ? selected.value : "all";
         setSelectedMonth(newMonth);
@@ -128,6 +117,10 @@ const FilterSection = ({ onFilterChange }) => {
                                     fontSize: '0.875rem',
                                     minHeight: '38px'
                                 }),
+                                menu: (base) => ({
+                                    ...base,
+                                    zIndex: 9999
+                                })
                             }}
                         />
                     </div>
@@ -138,13 +131,18 @@ const FilterSection = ({ onFilterChange }) => {
                             value={selectedCustomer}
                             onChange={handleCustomerChange}
                             isClearable
-                            placeholder="Semua customer"
+                            isDisabled={selectedSite === "all"}
+                            placeholder={selectedSite === "all" ? "Pilih site terlebih dahulu" : "Semua customer"}
                             styles={{
                                 control: (base) => ({
                                     ...base,
                                     fontSize: '0.875rem',
                                     minHeight: '38px'
                                 }),
+                                menu: (base) => ({
+                                    ...base,
+                                    zIndex: 9999
+                                })
                             }}
                         />
                     </div>
@@ -165,6 +163,10 @@ const FilterSection = ({ onFilterChange }) => {
                                     fontSize: '0.875rem',
                                     minHeight: '38px'
                                 }),
+                                menu: (base) => ({
+                                    ...base,
+                                    zIndex: 9999
+                                })
                             }}
                         />
                     </div>
@@ -183,6 +185,10 @@ const FilterSection = ({ onFilterChange }) => {
                                         fontSize: '0.875rem',
                                         minHeight: '38px'
                                     }),
+                                    menu: (base) => ({
+                                        ...base,
+                                        zIndex: 9999
+                                    })
                                 }}
                             />
                         </div>

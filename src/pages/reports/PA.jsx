@@ -6,18 +6,33 @@ import UnifiedChartComponent from "../../components/charts/UnifiedChartComponent
 import data from "../../data/table/data.json";
 import { toast } from "react-hot-toast";
 import * as XLSX from 'xlsx';
+import LocationJSON from "../../data/data_dummy_peta.json";
 
 const ReportPA = () => {
   const [selectedYear, setSelectedYear] = useState("all");
   const [selectedMonth, setSelectedMonth] = useState("all");
+  const [selectedSite, setSelectedSite] = useState("all");
+  const [selectedCustomer, setSelectedCustomer] = useState(null);
 
   const filteredData = useMemo(() => {
-    return data.dataPA.filter(item => {
+    // Filter berdasarkan tahun dan bulan
+    let filtered = data.dataPA.filter(item => {
       const yearMatch = selectedYear === "all" || item.years === selectedYear;
       const monthMatch = selectedMonth === "all" || item.month === selectedMonth;
       return yearMatch && monthMatch;
     });
-  }, [selectedYear, selectedMonth]);
+
+    // Filter berdasarkan customer
+    if (selectedCustomer) {
+      // Cari customer berdasarkan ID
+      const customerInfo = LocationJSON.find(loc => loc.id === selectedCustomer);
+      if (customerInfo) {
+        filtered = filtered.filter(item => item.customer === customerInfo.location_name);
+      }
+    }
+
+    return filtered;
+  }, [selectedYear, selectedMonth, selectedCustomer]);
 
   const calculateMinMax = (data, keys) => {
     if (data.length === 0) return { min: 0, max: 100 };
@@ -30,6 +45,8 @@ const ReportPA = () => {
   const handleFilterChange = (filters) => {
     setSelectedYear(filters.year);
     setSelectedMonth(filters.month);
+    setSelectedSite(filters.site);
+    setSelectedCustomer(filters.customer);
   };
 
   const exportToExcel = () => {
@@ -45,6 +62,31 @@ const ReportPA = () => {
     XLSX.writeFile(workbook, `PA_Report_${date}.xlsx`);
   };
 
+  // Fungsi untuk membuat judul dinamis dengan urutan: site - customer - bulan - tahun
+  const getDynamicTitle = () => {
+    let title = "Report PA% Monthly per Site";
+
+    if (selectedSite !== "all") {
+      title += ` - ${selectedSite}`;
+    }
+
+    if (selectedCustomer) {
+      const customerInfo = LocationJSON.find(loc => loc.id === selectedCustomer);
+      if (customerInfo) {
+        title += ` - ${customerInfo.location_name}`;
+      }
+    }
+
+    if (selectedMonth !== "all") {
+      title += ` - ${selectedMonth}`;
+    }
+
+    if (selectedYear !== "all") {
+      title += ` - ${selectedYear}`;
+    }
+
+    return title;
+  };
 
   return (
     <div className="min-h-screen bg-gray-100 p-4 sm:p-6 md:p-8 lg:p-10">
@@ -64,7 +106,7 @@ const ReportPA = () => {
         <FilterSection onFilterChange={handleFilterChange} />
 
         <h1 className="text-lg sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-800 mb-2 my-4 lg:my-6">
-          Report <span className="text-yellow-700">PA% Monthly per Site</span>
+          {getDynamicTitle()}
         </h1>
 
         {filteredData.length > 0 ? (
@@ -100,6 +142,7 @@ const ReportPA = () => {
             <p className="text-gray-500 mt-2">
               Tidak ada data untuk {selectedYear === "all" ? "semua tahun" : `tahun ${selectedYear}`}
               {selectedMonth === "all" ? "" : ` bulan ${selectedMonth}`}
+              {selectedCustomer ? ` dengan customer ${LocationJSON.find(loc => loc.id === selectedCustomer)?.location_name || ""}` : ""}
             </p>
           </div>
         )}

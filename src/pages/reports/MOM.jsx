@@ -3,86 +3,10 @@ import HeaderSection from "../../components/ui/HeaderSection";
 import FilterSection from "../../components/ui/FilterSection";
 import ActionButtons from "../../components/ui/ActionButtons";
 import TableTabular from "../../components/tables/Tabular";
+import data from "../../data/table/data.json"
 import { toast } from "react-hot-toast";
 import * as XLSX from 'xlsx';
 
-const dataMOM = [
-  {
-    item: "1",
-    what: `
-      <ul class="list-disc pl-5">
-        <li>Implementation of new safety procedures in heavy machinery operations <span class="text-blue-600 font-semibold">[New]</span>.</li>
-        <li>Team conducted training sessions on February 15, 2024, for all site workers.</li>
-        <li>Inspection checklist has been updated with additional safety parameters.</li>
-        <li><span class="text-green-600 font-semibold">F/U for approval from management</span> > Waiting for final review.</li>
-      </ul>
-    `,
-    who: "Rizky Dwi, Anisa Putri",
-    when: "December 2025",
-    year: "2025",
-    month: "December",
-  },
-  {
-    item: "2",
-    what: `
-      <ul class="list-disc pl-5">
-        <li>Hydraulic pump replacement schedule updated to improve equipment lifespan.</li>
-        <li>Supplier confirmed stock availability, delivery expected by mid-April.</li>
-        <li>Maintenance logs will be reviewed weekly to track equipment performance.</li>
-        <li><span class="text-green-600 font-semibold">F/U for budget allocation confirmation</span> > Pending approval from finance.</li>
-      </ul>
-    `,
-    who: "Budi Santoso, Lisa Wijaya",
-    when: "October 2025",
-    year: "2025",
-    month: "October",
-  },
-  {
-    item: "3",
-    what: `
-      <ul class="list-disc pl-5">
-        <li>Warehouse inventory system upgrade proposal submitted <span class="text-blue-600 font-semibold">[New]</span>.</li>
-        <li>IT team is evaluating software compatibility and integration feasibility.</li>
-        <li>Target to complete system migration before peak operational period.</li>
-        <li><span class="text-green-600 font-semibold">F/U on vendor selection for software implementation</span> > Shortlisting process ongoing.</li>
-      </ul>
-    `,
-    who: "Dewi Setiawan, Damar Pratama",
-    when: "October 2024",
-    year: "2024",
-    month: "October",
-  },
-  {
-    item: "4",
-    what: `
-      <ul class="list-disc pl-5">
-        <li>Evaluation of alternative raw materials to reduce production costs.</li>
-        <li>R&D team initiated trials for eco-friendly material substitutes.</li>
-        <li>Cost-benefit analysis report scheduled for presentation next month.</li>
-        <li><span class="text-green-600 font-semibold">F/U for supplier quotation</span> > Awaiting price breakdown from two shortlisted vendors.</li>
-      </ul>
-    `,
-    who: "Siti Rahma, Andi Nugroho",
-    when: "December 2024",
-    year: "2024",
-    month: "December",
-  },
-  {
-    item: "5",
-    what: `
-      <ul class="list-disc pl-5">
-        <li>Preventive maintenance plan for fleet vehicles under review <span class="text-blue-600 font-semibold">[New]</span>.</li>
-        <li>Data analysis of past breakdowns used to optimize service intervals.</li>
-        <li>Implementation of real-time GPS tracking for better monitoring.</li>
-        <li><span class="text-green-600 font-semibold">F/U for approval on additional funding</span> > Proposal submitted, awaiting response.</li>
-      </ul>
-    `,
-    who: "Ahmad Fauzi, Nurul Hidayat",
-    when: "December 2024",
-    year: "2024",
-    month: "December",
-  },
-];
 
 const ReportMOM = () => {
   const [selectedYear, setSelectedYear] = useState("all");
@@ -90,7 +14,7 @@ const ReportMOM = () => {
 
   // Filter data berdasarkan year dan month
   const filteredData = useMemo(() => {
-    return dataMOM.filter(item => {
+    return data.dataMOM.filter(item => {
       const yearMatch = selectedYear === "all" || item.year === selectedYear;
       const monthMatch = selectedMonth === "all" || item.month === selectedMonth;
       return yearMatch && monthMatch;

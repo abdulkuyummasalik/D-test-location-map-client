@@ -7,36 +7,73 @@ import TableMerge from "../../components/tables/Merge";
 import data from "../../data/table/data.json";
 import { toast } from "react-hot-toast";
 import * as XLSX from 'xlsx';
+import LocationJSON from "../../data/data_dummy_peta.json";
 
 const ReportPareto = () => {
   const [selectedSite, setSelectedSite] = useState("all");
   const [selectedYear, setSelectedYear] = useState("all");
   const [selectedMonth, setSelectedMonth] = useState("all");
+  const [selectedCustomer, setSelectedCustomer] = useState(null);
 
-  const getTitle = () => {
+  const getReportTitle = () => {
+    let title = "Report Pareto Down (Top 5)";
+    if (selectedSite !== "all") {
+      title += ` - ${selectedSite}`;
+    }
+    if (selectedCustomer) {
+      const customerInfo = LocationJSON.find(loc => loc.id === selectedCustomer);
+      if (customerInfo) {
+        title += ` - ${customerInfo.location_name}`;
+      }
+    }
+    if (selectedMonth !== "all") {
+      title += ` - ${selectedMonth}`;
+    }
+    if (selectedYear !== "all") {
+      title += ` - ${selectedYear}`;
+    }
+    return title;
+  };
+
+  const getChartTitle = () => {
     let title = "PARETO SMARTROC t45 10 LF";
     if (selectedSite !== "all") {
       title += ` - ${selectedSite}`;
     }
+    if (selectedCustomer) {
+      const customerInfo = LocationJSON.find(loc => loc.id === selectedCustomer);
+      if (customerInfo) {
+        title += ` - ${customerInfo.location_name}`;
+      }
+    }
     if (selectedMonth !== "all") {
-      title += ` ${selectedMonth}`;
+      title += ` - ${selectedMonth}`;
     }
     if (selectedYear !== "all") {
-      title += ` ${selectedYear}`;
+      title += ` - ${selectedYear}`;
     }
     return title;
   };
 
   const filteredData = useMemo(() => {
-    return data.data.filter(item => {
+    let filtered = data.data.filter(item => {
       const yearMatch = selectedYear === "all" || item.years === selectedYear;
       const monthMatch = selectedMonth === "all" || item.month === selectedMonth;
       return yearMatch && monthMatch;
-    }).map((no, index) => ({
-      ...no,
+    });
+
+    if (selectedCustomer) {
+      const customerInfo = LocationJSON.find(loc => loc.id === selectedCustomer);
+      if (customerInfo) {
+        filtered = filtered.filter(item => item.customer === customerInfo.location_name);
+      }
+    }
+
+    return filtered.map((item, index) => ({
+      ...item,
       no: (index + 1).toString()
     }));
-  }, [selectedYear, selectedMonth]);
+  }, [selectedYear, selectedMonth, selectedCustomer]);
 
   const formattedDataForChart = useMemo(() => {
     return filteredData.map(item => ({
@@ -59,6 +96,7 @@ const ReportPareto = () => {
     setSelectedSite(filters.site);
     setSelectedYear(filters.year);
     setSelectedMonth(filters.month);
+    setSelectedCustomer(filters.customer);
   };
 
   const exportToExcel = () => {
@@ -74,6 +112,7 @@ const ReportPareto = () => {
       hour: item.hour,
       years: item.years,
       month: item.month,
+      customer: item.customer || "",
       suspectedRootCause: item.suspectedRootCause.map(cause => cause.join(", ")).join("; "),
       breakdownDetail: item.breakdownDetail.map(detail => detail.join(", ")).join("; "),
       correctiveAction: item.correctiveAction.map(action => action.join(", ")).join("; "),
@@ -85,7 +124,7 @@ const ReportPareto = () => {
     XLSX.utils.book_append_sheet(workbook, worksheet, "Report");
 
     const date = new Date().toISOString().split('T')[0];
-    XLSX.writeFile(workbook, `PA_Report_${date}.xlsx`);
+    XLSX.writeFile(workbook, `Pareto_Report_${date}.xlsx`);
   };
 
   return (
@@ -106,13 +145,14 @@ const ReportPareto = () => {
         <FilterSection onFilterChange={handleFilterChange} />
 
         <h1 className="text-lg sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-800 my-4 lg:my-6">
-          Report <span className="text-yellow-700">Pareto Down (Top 5)</span>
+          {getReportTitle()}
         </h1>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 md:gap-8 lg:gap-10">
           {filteredData.length > 0 ? (
             <UnifiedChartComponent
-              title={getTitle()}
+              // title="PARETO SMARTROC t45 10 LF" // Judul grafik tetap
+              title={getChartTitle()} // Opsi judul grafik dinamis (dikomen/hidden)
               data={formattedDataForChart}
               config={{
                 chartHeight: 400,
@@ -142,6 +182,7 @@ const ReportPareto = () => {
               <p className="text-gray-500 mt-2">
                 Tidak ada data untuk {selectedYear === "all" ? "semua tahun" : `tahun ${selectedYear}`}
                 {selectedMonth === "all" ? "" : ` bulan ${selectedMonth}`}
+                {selectedCustomer ? ` dengan customer ${LocationJSON.find(loc => loc.id === selectedCustomer)?.location_name || ""}` : ""}
               </p>
             </div>
           )}
@@ -154,6 +195,7 @@ const ReportPareto = () => {
               <p className="text-gray-500 mt-2">
                 Tidak ada data untuk {selectedYear === "all" ? "semua tahun" : `tahun ${selectedYear}`}
                 {selectedMonth === "all" ? "" : ` bulan ${selectedMonth}`}
+                {selectedCustomer ? ` dengan customer ${LocationJSON.find(loc => loc.id === selectedCustomer)?.location_name || ""}` : ""}
               </p>
             </div>
           )}
@@ -162,7 +204,7 @@ const ReportPareto = () => {
         <ActionButtons />
       </div>
     </div>
-  );  
+  );
 };
 
 export default ReportPareto;

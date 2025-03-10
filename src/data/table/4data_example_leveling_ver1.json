@@ -1,5 +1,14 @@
 [
   {
+    "title": "NO UNIT",
+    "model": "MODEL",
+    "description": "DESCRIPTION",
+    "value": "VALUE",
+    "duration": "DURATION",
+    "background_color": "white",
+    "text_color": "black"
+  },
+  {
     "title": "",
     "model": "",
     "description": "SAFETY IS NUMBER",

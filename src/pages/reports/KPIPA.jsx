@@ -8,22 +8,33 @@ import data from "../../data/table/data.json";
 import toast from "react-hot-toast";
 import jsPDF from "jspdf";
 import autoTable from "jspdf-autotable";
+import LocationJSON from "../../data/data_dummy_peta.json";
 
 const ReportKPIPA = () => {
   const [selectedYear, setSelectedYear] = useState("all");
   const [selectedMonth, setSelectedMonth] = useState("all");
+  const [selectedSite, setSelectedSite] = useState("all");
+  const [selectedCustomer, setSelectedCustomer] = useState(null);
+
   const getYearFromTTL = (event) => parseInt(event.slice(-2), 10);
 
   const filteredData = useMemo(() => {
     let result = data.dataKPIPA.filter(item => {
       const yearMatch = selectedYear === "all" || getYearFromTTL(item.event) === parseInt(selectedYear.slice(-2), 10);
       const monthMatch = selectedMonth === "all" || item.month === selectedMonth;
-      return yearMatch && monthMatch;
+      let customerMatch = true;
+      if (selectedCustomer) {
+        const customerInfo = LocationJSON.find(loc => loc.id === selectedCustomer);
+        if (customerInfo) {
+          customerMatch = item.customer === customerInfo.location_name;
+        }
+      }
+      return yearMatch && monthMatch && customerMatch;
     });
 
     result.sort((a, b) => getYearFromTTL(a.event) - getYearFromTTL(b.event));
     return result;
-  }, [selectedYear, selectedMonth]);
+  }, [selectedYear, selectedMonth, selectedCustomer]);
 
   const { rowHeaders, columnHeaders, dataMatrix } = useMemo(() => {
     const rowHeaders = [...new Set(filteredData.map(item => item.title))];
@@ -62,6 +73,8 @@ const ReportKPIPA = () => {
   const handleFilterChange = (filters) => {
     setSelectedYear(filters.year);
     setSelectedMonth(filters.month);
+    setSelectedSite(filters.site);
+    setSelectedCustomer(filters.customer);
   };
 
   const exportToPDF = () => {
@@ -72,22 +85,17 @@ const ReportKPIPA = () => {
       }
 
       const doc = new jsPDF();
-
-      // Judul PDF
       doc.setFontSize(18);
       doc.text("KPI PA Report", 14, 15);
 
-      // Header tabel
       const headers = [["Title", "Date", "Value"]];
 
-      // Data tabel
       const data = filteredData.map(item => [
         item.title,
         item.event,
         item.target,
       ]);
 
-      // Gunakan autoTable sebagai fungsi terpisah
       autoTable(doc, {
         head: headers,
         body: data,
@@ -103,6 +111,31 @@ const ReportKPIPA = () => {
       toast.error('Gagal mengekspor PDF');
       console.error('Error exporting PDF:', error);
     }
+  };
+
+  const getDynamicTitle = () => {
+    let title = "Report KPI - PA";
+
+    if (selectedCustomer) {
+      const customerInfo = LocationJSON.find(loc => loc.id === selectedCustomer);
+      if (customerInfo) {
+        title += ` - ${customerInfo.location_name}`;
+      }
+    }
+
+    if (selectedSite !== "all") {
+      title += ` - ${selectedSite}`;
+    }
+
+    if (selectedYear !== "all") {
+      title += ` - ${selectedYear}`;
+    }
+
+    if (selectedMonth !== "all") {
+      title += ` - ${selectedMonth}`;
+    }
+
+    return title;
   };
 
   return (
@@ -123,7 +156,7 @@ const ReportKPIPA = () => {
         <FilterSection onFilterChange={handleFilterChange} />
 
         <h1 className="text-lg sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-800 mb-2 my-4 lg:my-6">
-          Report <span className="text-yellow-700">KPI - PA% (Yearly)</span>
+          {getDynamicTitle()}
         </h1>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 md:gap-8 lg:gap-10">
@@ -162,6 +195,7 @@ const ReportKPIPA = () => {
               <p className="text-gray-500 mt-2">
                 Tidak ada data untuk {selectedYear === "all" ? "semua tahun" : `tahun ${selectedYear}`}
                 {selectedMonth === "all" ? "" : ` bulan ${selectedMonth}`}
+                {selectedCustomer ? ` dengan customer ${LocationJSON.find(loc => loc.id === selectedCustomer)?.location_name || ""}` : ""}
               </p>
             </div>
           )}

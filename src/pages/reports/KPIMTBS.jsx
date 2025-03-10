@@ -8,22 +8,33 @@ import data from "../../data/table/data.json";
 import jsPDF from "jspdf";
 import autoTable from "jspdf-autotable";
 import toast from "react-hot-toast";
+import LocationJSON from "../../data/data_dummy_peta.json";
 
 const ReportKPIMTBS = () => {
   const [selectedYear, setSelectedYear] = useState("all");
   const [selectedMonth, setSelectedMonth] = useState("all");
+  const [selectedSite, setSelectedSite] = useState("all");
+  const [selectedCustomer, setSelectedCustomer] = useState(null);
+
   const getYearFromTTL = (tanggal) => parseInt(tanggal.slice(-2), 10);
 
   const filteredData = useMemo(() => {
     let result = data.dataMTBS.filter((item) => {
       const yearMatch = selectedYear === "all" || getYearFromTTL(item.tanggal) === parseInt(selectedYear.slice(-2), 10);
       const monthMatch = selectedMonth === "all" || item.bulan === selectedMonth;
-      return yearMatch && monthMatch;
+      let customerMatch = true;
+      if (selectedCustomer) {
+        const customerInfo = LocationJSON.find(loc => loc.id === selectedCustomer);
+        if (customerInfo) {
+          customerMatch = item.customer === customerInfo.location_name;
+        }
+      }
+      return yearMatch && monthMatch && customerMatch;
     });
 
     result.sort((a, b) => a.nilai - b.nilai);
     return result;
-  }, [selectedYear, selectedMonth]);
+  }, [selectedYear, selectedMonth, selectedCustomer]);
 
   const { rowHeaders, columnHeaders, dataMatrix } = useMemo(() => {
     const rowHeaders = [...new Set(filteredData.map((item) => item.nama))];
@@ -60,6 +71,8 @@ const ReportKPIMTBS = () => {
   const handleFilterChange = (filters) => {
     setSelectedYear(filters.year);
     setSelectedMonth(filters.month);
+    setSelectedSite(filters.site);
+    setSelectedCustomer(filters.customer);
   };
 
   const exportToPDF = () => {
@@ -98,9 +111,35 @@ const ReportKPIMTBS = () => {
       console.error('Error exporting PDF:', error);
     }
   };
+
   const categories = useMemo(() => {
     return filteredData.map((_, index) => index + 1);
   }, [filteredData]);
+
+  const getDynamicTitle = () => {
+    let title = "Report KPI - MTBS";
+
+    if (selectedCustomer) {
+      const customerInfo = LocationJSON.find(loc => loc.id === selectedCustomer);
+      if (customerInfo) {
+        title += ` - ${customerInfo.location_name}`;
+      }
+    }
+
+    if (selectedSite !== "all") {
+      title += ` - ${selectedSite}`;
+    }
+
+    if (selectedYear !== "all") {
+      title += ` - ${selectedYear}`;
+    }
+
+    if (selectedMonth !== "all") {
+      title += ` - ${selectedMonth}`;
+    }
+
+    return title;
+  };
 
   return (
     <div className="min-h-screen bg-gray-100 p-4 sm:p-6 md:p-8 lg:p-10">
@@ -120,7 +159,7 @@ const ReportKPIMTBS = () => {
         <FilterSection onFilterChange={handleFilterChange} />
 
         <h1 className="text-lg sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-800 my-4 lg:my-6">
-          Report <span className="text-yellow-700">KPI - MTBS (Yearly)</span>
+          {getDynamicTitle()}
         </h1>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 md:gap-8 lg:gap-10">
@@ -160,6 +199,7 @@ const ReportKPIMTBS = () => {
               <p className="text-gray-500 mt-2">
                 Tidak ada data untuk {selectedYear === "all" ? "semua tahun" : `tahun ${selectedYear}`}
                 {selectedMonth === "all" ? "" : ` bulan ${selectedMonth}`}
+                {selectedCustomer ? ` dengan customer ${LocationJSON.find(loc => loc.id === selectedCustomer)?.location_name || ""}` : ""}
               </p>
             </div>
           )}
